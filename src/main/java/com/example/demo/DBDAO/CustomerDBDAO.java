@@ -163,7 +163,7 @@ public class CustomerDBDAO implements CustomerDAO
 	 * @return
 	 */
 	public Coupon getCouponByIdAndTimeAvailable(Coupon coupon){
-		Date today = Calendar.getInstance().getTime();
+		Date today = new Date();//Calendar.getInstance().getTime();
 		return couponRepo.findCouponByIdAndTime(coupon.getId(), today);
 	}
 	/**

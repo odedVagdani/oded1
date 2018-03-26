@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -342,7 +343,7 @@ public class VagdaniCouponApplicationTests {
 
 		assertNotNull(companyFacade.login("nike", "1111", ClientType.Company));
 
-		Coupon newCoupon = new Coupon("shoes", LocalDate.parse("2018-03-10"), LocalDate.parse("2019-03-11"), 10,
+		Coupon newCoupon = new Coupon("shoes", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
 
 		companyFacade.createCoupon(newCoupon);
@@ -363,7 +364,7 @@ public class VagdaniCouponApplicationTests {
 
 		assertNotNull(companyFacade.login("nike", "1111", ClientType.Company));
 
-		Coupon newCoupon = new Coupon("shoes", LocalDate.parse("2018-03-10"), LocalDate.parse("2019-03-11"), 10,
+		Coupon newCoupon = new Coupon("shoes", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
 		companyFacade.createCoupon(newCoupon);
 
@@ -381,11 +382,11 @@ public class VagdaniCouponApplicationTests {
 
 		assertNotNull(companyFacade.login("nike", "1111", ClientType.Company));
 
-		Coupon newCoupon = new Coupon("shoes", LocalDate.parse("2018-03-10"), LocalDate.parse("2019-03-11"), 10,
+		Coupon newCoupon = new Coupon("shoes",getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
 		companyFacade.createCoupon(newCoupon);
 
-		Coupon newCoupon2 = new Coupon("shoes", LocalDate.parse("2018-03-09"), LocalDate.parse("2020-03-11"), 10,
+		Coupon newCoupon2 = new Coupon("shoes", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 500, "no massage");
 
 		companyFacade.createCoupon(newCoupon2);
@@ -402,7 +403,7 @@ public class VagdaniCouponApplicationTests {
 
 		assertNotNull(companyFacade.login("nike", "1111", ClientType.Company));
 
-		Coupon newCoupon = new Coupon("shoes", LocalDate.parse("2018-03-10"), LocalDate.parse("2019-03-11"), 10,
+		Coupon newCoupon = new Coupon("shoes",getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
 
 		companyFacade.createCoupon(newCoupon);
@@ -425,7 +426,7 @@ public class VagdaniCouponApplicationTests {
 
 		assertNotNull(companyFacade.login("nike", "1111", ClientType.Company));
 
-		Coupon newCoupon = new Coupon("shoes", LocalDate.parse("2018-03-10"), LocalDate.parse("2019-03-11"), 10,
+		Coupon newCoupon = new Coupon("shoes", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
 
 		companyFacade.removeCoupon(newCoupon);
@@ -441,7 +442,7 @@ public class VagdaniCouponApplicationTests {
 
 		assertNotNull(companyFacade.login("nike", "1111", ClientType.Company));
 
-		Coupon newCoupon = new Coupon("shoes", LocalDate.parse("2018-03-10"), LocalDate.parse("2019-03-11"), 10,
+		Coupon newCoupon = new Coupon("shoes", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
 
 		companyFacade.createCoupon(newCoupon);
@@ -451,7 +452,7 @@ public class VagdaniCouponApplicationTests {
 		Assert.assertEquals(testCoupon, newCoupon);
 
 		newCoupon.setImage("buifs");
-		newCoupon.setStartDate(LocalDate.parse("2228-03-10"));
+		newCoupon.setStartDate(getDateByString("2018-03-11 22:33:10"));
 		newCoupon.setTitle("trapes");
 		newCoupon.setPrice(400);
 
@@ -471,11 +472,11 @@ public class VagdaniCouponApplicationTests {
 
 		assertNotNull(companyFacade.login("nike", "1111", ClientType.Company));
 
-		Coupon newCoupon = new Coupon("shoes", LocalDate.parse("2018-03-10"), LocalDate.parse("2019-03-11"), 10,
+		Coupon newCoupon = new Coupon("shoes", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
 
 		newCoupon.setImage("buifs");
-		newCoupon.setStartDate(LocalDate.parse("2228-03-10"));
+		newCoupon.setStartDate(getDateByString("2018-03-11 22:33:10"));
 		newCoupon.setTitle("trapes");
 		newCoupon.setPrice(400);
 
@@ -530,7 +531,7 @@ public class VagdaniCouponApplicationTests {
 
 		for (int i = 0; i < 5; i++) {
 
-			c = new Coupon("shoes" + i, LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+			c = new Coupon("shoes" + i, getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 					CouponType.Sport, "elegant", 1000, "no massage");
 			tempListOfCoupons.add(c);
 			companyFacade.createCoupon(c);
@@ -564,15 +565,15 @@ public class VagdaniCouponApplicationTests {
 		assertNotNull(companyFacade.login("nike", "1111", ClientType.Company));
 		companyFacade.login("nike", "1111", ClientType.Company);
 
-		Coupon c = new Coupon("shoes", LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+		Coupon c = new Coupon("shoes",getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
-		Coupon c1 = new Coupon("shoes2", LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+		Coupon c1 = new Coupon("shoes2",getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Electronic, "elegant", 1000, "no massage");
-		Coupon c2 = new Coupon("shoes3", LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+		Coupon c2 = new Coupon("shoes3", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Food, "elegant", 1000, "no massage");
-		Coupon c3 = new Coupon("shoes4", LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+		Coupon c3 = new Coupon("shoes4", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Fun, "elegant", 1000, "no massage");
-		Coupon c4 = new Coupon("shoes5", LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+		Coupon c4 = new Coupon("shoes5", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Fun, "elegant", 1000, "no massage");
 		companyFacade.createCoupon(c);
 		companyFacade.createCoupon(c1);
@@ -598,15 +599,15 @@ public class VagdaniCouponApplicationTests {
 		assertNotNull(companyFacade.login("nike", "1111", ClientType.Company));
 		companyFacade.login("nike", "1111", ClientType.Company);
 
-		Coupon c = new Coupon("shoes", LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+		Coupon c = new Coupon("shoes", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
-		Coupon c1 = new Coupon("shoes2", LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+		Coupon c1 = new Coupon("shoes2",getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Electronic, "elegant", 1000, "no massage");
-		Coupon c2 = new Coupon("shoes3", LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+		Coupon c2 = new Coupon("shoes3",getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Food, "elegant", 1000, "no massage");
-		Coupon c3 = new Coupon("shoes4", LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+		Coupon c3 = new Coupon("shoes4",getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Fun, "elegant", 1000, "no massage");
-		Coupon c4 = new Coupon("shoes5", LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+		Coupon c4 = new Coupon("shoes5", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Fun, "elegant", 1000, "no massage");
 		companyFacade.createCoupon(c);
 		companyFacade.createCoupon(c1);
@@ -633,7 +634,7 @@ public class VagdaniCouponApplicationTests {
 		Collection<Coupon> ListOfCouponsByPrice = new ArrayList();
 		for (int i = 0; i < 3; i++) {
 
-			c = new Coupon("shoes" + i, LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+			c = new Coupon("shoes" + i, getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 					CouponType.Sport, "elegant", 1000 * i, "no massage");
 
 			companyFacade.createCoupon(c);
@@ -659,7 +660,7 @@ public class VagdaniCouponApplicationTests {
 
 		for (int i = 0; i < 3; i++) {
 
-			c = new Coupon("shoes" + i, LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+			c = new Coupon("shoes" + i,getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 					CouponType.Sport, "elegant", 1000 * i, "no massage");
 
 			companyFacade.createCoupon(c);
@@ -685,7 +686,7 @@ public class VagdaniCouponApplicationTests {
 
 		for (int i = 3; i < 6; i++) {
 
-			c = new Coupon("shoes" + i, LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+			c = new Coupon("shoes" + i, getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 					CouponType.Sport, "elegant", 1000 * i, "no massage");
 
 			companyFacade.createCoupon(c);
@@ -707,15 +708,15 @@ public class VagdaniCouponApplicationTests {
 
 		Collection<Coupon> couponListByNow = new ArrayList();
 
-		Coupon c = new Coupon("shoes", LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+		Coupon c = new Coupon("shoes", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
-		Coupon c1 = new Coupon("shoes2", LocalDate.parse("2018-03-11"), LocalDate.parse("2021-03-11"), 10,
+		Coupon c1 = new Coupon("shoes2", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
-		Coupon c2 = new Coupon("shoes3", LocalDate.parse("2018-03-11"), LocalDate.parse("2022-03-11"), 10,
+		Coupon c2 = new Coupon("shoes3", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
-		Coupon c3 = new Coupon("shoes4", LocalDate.parse("2018-03-11"), LocalDate.parse("2023-03-11"), 10,
+		Coupon c3 = new Coupon("shoes4", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
-		Coupon c4 = new Coupon("shoes5", LocalDate.parse("2018-03-11"), LocalDate.parse("2024-03-11"), 10,
+		Coupon c4 = new Coupon("shoes5", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
 
 		companyFacade.createCoupon(c);
@@ -745,15 +746,15 @@ public class VagdaniCouponApplicationTests {
 		assertNotNull(companyFacade.login("nike", "1111", ClientType.Company));
 		companyFacade.login("nike", "1111", ClientType.Company);
 
-		Coupon c = new Coupon("shoes", LocalDate.parse("2018-03-11"), LocalDate.parse("2010-03-11"), 10,
+		Coupon c = new Coupon("shoes", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
-		Coupon c1 = new Coupon("shoes2", LocalDate.parse("2018-03-11"), LocalDate.parse("2011-03-11"), 10,
+		Coupon c1 = new Coupon("shoes2", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
-		Coupon c2 = new Coupon("shoes3", LocalDate.parse("2018-03-11"), LocalDate.parse("2012-03-11"), 10,
+		Coupon c2 = new Coupon("shoes3", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
-		Coupon c3 = new Coupon("shoes4", LocalDate.parse("2018-03-11"), LocalDate.parse("2013-03-11"), 10,
+		Coupon c3 = new Coupon("shoes4", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
-		Coupon c4 = new Coupon("shoes5", LocalDate.parse("2018-03-11"), LocalDate.parse("2014-03-11"), 10,
+		Coupon c4 = new Coupon("shoes5", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
 
 		companyFacade.createCoupon(c);
@@ -799,7 +800,7 @@ public class VagdaniCouponApplicationTests {
 
 		customerFacade.login("oded", "1234", ClientType.Customer);
 
-		Coupon c = new Coupon("shoes", LocalDate.parse("2018-03-21"), LocalDate.parse("2018-03-21"), 10,
+		Coupon c = new Coupon("shoes", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
 
 		companyFacade.createCoupon(c);
@@ -828,7 +829,7 @@ public class VagdaniCouponApplicationTests {
 
 		customerFacade.login("oded", "1234", ClientType.Customer);
 
-		Coupon c = new Coupon("shoes", LocalDate.parse("2018-03-11"), LocalDate.parse("2010-03-11"), 10,
+		Coupon c = new Coupon("shoes", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 				CouponType.Sport, "elegant", 1000, "no massage");
 
 		companyFacade.createCoupon(c);
@@ -857,7 +858,7 @@ public class VagdaniCouponApplicationTests {
 
 		customerFacade.login("oded", "1234", ClientType.Customer);
 
-		Coupon c = new Coupon("shoes", LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), -1,
+		Coupon c = new Coupon("shoes", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), -1,
 				CouponType.Sport, "elegant", 1000, "no massage");
 
 		companyFacade.createCoupon(c);
@@ -883,7 +884,7 @@ public class VagdaniCouponApplicationTests {
 
 		customerFacade.login("oded", "1234", ClientType.Customer);
 
-		Coupon c = new Coupon("shoes", LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 100,
+		Coupon c = new Coupon("shoes", getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 100,
 				CouponType.Sport, "elegant", 1000, "no massage");
 
 		
@@ -913,7 +914,7 @@ public class VagdaniCouponApplicationTests {
 		Coupon c;
 		for(int i = 0 ; i < 5 ; i ++){
 			
-			c = new Coupon("shoes"+i, LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+			c = new Coupon("shoes"+i, getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 					CouponType.Sport, "elegant", 1000, "no massage");
 			
 			companyFacade.createCoupon(c);
@@ -948,7 +949,7 @@ public class VagdaniCouponApplicationTests {
 		Coupon c;
 		for(int i = 0 ; i < 5 ; i ++){
 			
-			c = new Coupon("shoes"+i, LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+			c = new Coupon("shoes"+i, getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 					CouponType.Sport, "elegant", 1000, "no massage");
 			
 			companyFacade.createCoupon(c);
@@ -984,7 +985,7 @@ public class VagdaniCouponApplicationTests {
 		Coupon c;
 		for(int i = 0 ; i < 5 ; i ++){
 			
-			c = new Coupon("shoes"+i, LocalDate.parse("2018-03-11"), LocalDate.parse("2020-03-11"), 10,
+			c = new Coupon("shoes"+i, getDateByString("2018-03-11 22:33:10"), getDateByString("2018-03-11 22:33:10"), 10,
 					CouponType.Sport, "elegant", 1000, "no massage");
 			
 			companyFacade.createCoupon(c);
@@ -997,7 +998,21 @@ public class VagdaniCouponApplicationTests {
 	}
 	
 	
-	
+	/**
+	 * 
+	 * @param str dd-M-yyyy hh:mm:ss
+	 * @return Date
+	 * @throws ParseException 
+	 */
+	private Date getDateByString(String str) {
+		try {
+			return new SimpleDateFormat("dd-M-yyyy hh:mm:ss").parse(str);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 	
 	
