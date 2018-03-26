@@ -34,10 +34,10 @@ import org.springframework.stereotype.Component;
 		private String title;
 
 		@Column
-		private LocalDate startDate;
+		private Date startDate;
 		
 		@Column
-		private LocalDate endDate;
+		private Date endDate;
 		
 		@Column
 		private int amount;
@@ -85,28 +85,28 @@ import org.springframework.stereotype.Component;
  * get the coupon start date
  * @return date
  */
-		public LocalDate getStartDate() {
+		public Date getStartDate() {
 			return startDate;
 		}
 /**
  * ability to update the start date
  * @param startDate
  */
-		public void setStartDate(LocalDate startDate) {
+		public void setStartDate(Date startDate) {
 			this.startDate = startDate;
 		}
 /**
  * get the coupon end date
  * @return date
  */
-		public LocalDate getEndDate() {
+		public Date getEndDate() {
 			return endDate;
 		}
 /**
  * ability to update the end date
  * @param endDate
  */
-		public void setEndDate(LocalDate endDate) {
+		public void setEndDate(Date endDate) {
 			this.endDate = endDate;
 		}
 /**
@@ -190,7 +190,7 @@ import org.springframework.stereotype.Component;
  * @param price
  * @param image
  */
-		public Coupon( String title, LocalDate startDate, LocalDate endDate, int amount, CouponType type, String message,
+		public Coupon( String title, Date startDate, Date endDate, int amount, CouponType type, String message,
 				double price, String image) {
 			super();
 			
@@ -227,7 +227,6 @@ import org.springframework.stereotype.Component;
 				return false;
 			}
 
-			return id == ((Coupon) obj).getId()
-					;
+			return id == ((Coupon) obj).getId();
 		}
 	}
